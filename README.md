@@ -9,14 +9,12 @@ This is a simple to-do application that allows users to create, read, update, an
 * Users can mark a to-do item as completed by clicking on the checkbox next to it.
 * Users can edit an existing to-do item by clicking on the pencil icon next to it.
 * Users can delete a to-do item by clicking on the trashcan icon next to it.
+
 ## Tech Stack
 
 **Frontend:** Angular, TailwindCSS
 
 **Backend:** Spring Boot, PostgreSQL
-
-
-
 
 ## Frontend Structure
 
@@ -38,3 +36,6 @@ TO-DO APP/
     │   └── enviroment.ts
     └── assets
 ```
+
+## Entity Relationship Diagram
+![Diagram](entity-relationship-diagram.png)
