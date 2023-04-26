@@ -37,22 +37,22 @@ public class TaskService {
         return taskRepository.save(newTask);
     }
 
-    public ResponseEntity<Tasks> updateTask(Integer id, TaskRequest taskRequest) {
-        Tasks currentTask = getTaskById(id);
+    public ResponseEntity<Tasks> updateTask(Integer id, Tasks tasks) {
+        Tasks currentTask = this.getTaskById(id);
 
         if(currentTask != null) {
             Tasks existingTask = currentTask;
 
-            if (taskRequest.getTitle() != null)
-                existingTask.setTitle(taskRequest.getTitle());
-            if (taskRequest.getDescription() != null)
-                existingTask.setDescription(taskRequest.getDescription());
-            if (taskRequest.getStatus() != null)
-                existingTask.setStatus(taskRequest.getStatus());
-            if (taskRequest.getPriority() != null)
-                existingTask.setPriority(taskRequest.getPriority());
-            if (taskRequest.getDueDate() != null)
-                existingTask.setDueDate(taskRequest.getDueDate());
+            if (tasks.getTitle() != null)
+                existingTask.setTitle(tasks.getTitle());
+            if (tasks.getDescription() != null)
+                existingTask.setDescription(tasks.getDescription());
+            if (tasks.getStatus() != null)
+                existingTask.setStatus(tasks.getStatus());
+            if (tasks.getPriority() != null)
+                existingTask.setPriority(tasks.getPriority());
+            if (tasks.getDueDate() != null)
+                existingTask.setDueDate(tasks.getDueDate());
 
             return new ResponseEntity<>(taskRepository.save(existingTask), HttpStatus.OK);
         } else {
